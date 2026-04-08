@@ -10,7 +10,7 @@ This project is about implementing a VGA graphics demo outputting a simple image
 
 -------
 # Autors
-Samuel Adamec
-Lukas Benda
-Lukas Bartecek
+Samuel Adamec<br />
+Lukas Benda<br />
+Lukas Bartecek<br />
 Vlada Stastny
