@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 04/01/2026 12:39:33 PM
+-- Create Date: 04/08/2026 06:43:42 PM
 -- Design Name: 
--- Module Name: ethernet_packet_sender - Behavioral
+-- Module Name: vga_sync - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,11 +31,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity ethernet_packet_sender is
+entity vga_sync is
 --  Port ( );
-end ethernet_packet_sender;
+end vga_sync;
 
-architecture Behavioral of ethernet_packet_sender is
+architecture Behavioral of vga_sync is
 
 begin
 
