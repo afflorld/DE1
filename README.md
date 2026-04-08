@@ -6,7 +6,7 @@ This project is about implementing a VGA graphics demo outputting a simple image
 
 -------
 # Schematic
-![alt text](https://github.com/afflorld/DE1/img/schematic_01.png "Schematic")
+![alt text](https://github.com/afflorld/DE1/blob/main/img/shcematic_01.png "Schematic")
 
 -------
 # Autors
