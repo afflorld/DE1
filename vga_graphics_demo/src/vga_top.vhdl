@@ -12,3 +12,4 @@ architecture Behavioral of vga_top is
 begin
     dummy_out <= clk; -- Just to give it something to do
 end Behavioral;
+
