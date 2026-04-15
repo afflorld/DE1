@@ -13,4 +13,4 @@ This project is about implementing a VGA graphics demo outputting a simple image
 Samuel Adamec<br />
 Lukas Benda<br />
 Lukas Bartecek<br />
-Vlada Stastny
+Vladimir Stastny
