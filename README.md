@@ -18,4 +18,4 @@ Vladimir Stastny
 
 
 # .xdc idea
-![Constrains](https://github.com/afflorld/DE1/blob/main/vga_graphics_demo/constr/nexys.xdc "Constrain file")
+[Constrains](https://github.com/afflorld/DE1/blob/main/vga_graphics_demo/constr/nexys.xdc "Constrain file")
