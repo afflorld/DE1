@@ -30,3 +30,28 @@ update_compile_order -fileset sources_1
 set_property top vga_top [current_fileset]
 
 start_gui
+
+
+
+/// upravit
+
+# Zjištění cesty k adresáři, kde leží tento skript
+set script_dir [file dirname [file normalize [info script]]]
+
+set proj_name "vga_graphics_demo"
+set my_part "xc7a50tcsg324-1"
+
+# Vytvoření projektu
+create_project $proj_name ./build -part $my_part -force
+
+# Přidání souborů pomocí absolutní cesty odvozené od skriptu
+add_files [glob -nocomplain "$script_dir/src/*.vhd*"]
+add_files -fileset constrs_1 [glob -nocomplain "$script_dir/constr/*.xdc"]
+add_files -fileset sim_1 [glob -nocomplain "$script_dir/sim/*.vhd*"]
+
+# Refresh a nastavení top modulu
+update_compile_order -fileset sources_1
+set_property top vga_top [current_fileset]
+update_compile_order -fileset sources_1
+
+start_gui
