@@ -17,18 +17,17 @@ architecture tb of tb_vga_sync is
               y_pos    : out integer);
     end component;
 
-    signal clk      : std_logic;
+    signal clk      : std_logic := '0';
     signal rst      : std_logic;
-    signal en_25    : std_logic;
+    signal en_25    : std_logic := '0';
     signal x_sync   : std_logic;
     signal y_sync   : std_logic;
     signal video_on : std_logic;
     signal x_pos    : integer;
     signal y_pos    : integer;
 
-    constant TbPeriod : time := 1000 ns; -- ***EDIT*** Put right period here
-    signal TbClock : std_logic := '0';
-    signal TbSimEnded : std_logic := '0';
+    constant clk_period : time := 10 ns; 
+    signal TbSimEnded   : std_logic := '0';
 
 begin
 
@@ -42,37 +41,38 @@ begin
               x_pos    => x_pos,
               y_pos    => y_pos);
 
-    -- Clock generation
-    TbClock <= not TbClock after TbPeriod/2 when TbSimEnded /= '1' else '0';
+    clk_process : process
+    begin
+        while TbSimEnded = '0' loop
+            clk <= '0';
+            wait for clk_period / 2;
+            clk <= '1';
+            wait for clk_period / 2;
+        end loop;
+        wait;
+    end process;
 
-    -- ***EDIT*** Check that clk is really your main clock signal
-    clk <= TbClock;
+    en_gen : process
+    begin
+        while TbSimEnded = '0' loop
+            en_25 <= '0';
+            wait for 3 * clk_period;
+            en_25 <= '1';
+            wait for clk_period;
+        end loop;
+        wait;
+    end process;
 
     stimuli : process
     begin
-        -- ***EDIT*** Adapt initialization as needed
-        en_25 <= '0';
-
-        -- Reset generation
-        -- ***EDIT*** Check that rst is really your reset signal
         rst <= '1';
-        wait for 100 ns;
+        wait for 50 ns;
         rst <= '0';
-        wait for 100 ns;
+        
+        wait for 20 ms;
 
-        -- ***EDIT*** Add stimuli here
-        wait for 100 * TbPeriod;
-
-        -- Stop the clock and hence terminate the simulation
         TbSimEnded <= '1';
         wait;
     end process;
 
 end tb;
-
--- Configuration block below is required by some simulators. Usually no need to edit.
-
-configuration cfg_tb_vga_sync of tb_vga_sync is
-    for tb
-    end for;
-end cfg_tb_vga_sync;
