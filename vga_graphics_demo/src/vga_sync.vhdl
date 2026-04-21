@@ -6,8 +6,8 @@ entity vga_sync is
              clk : in STD_LOGIC;
              rst : in STD_LOGIC;
              en_25 : in STD_LOGIC;
-             hsync : out STD_LOGIC;
-             vsync : out STD_LOGIC;
+             x_sync : out STD_LOGIC;
+             y_sync : out STD_LOGIC;
              video_on : out STD_LOGIC;
              x_pos : out INTEGER range 0 to 639;
              y_pos : out INTEGER range 0 to 479
@@ -22,26 +22,20 @@ architecture Behavioral of vga_sync is
 begin
 
     xy_counting: process (clk) is
-
     begin
-
         if rising_edge(clk) then
             if rst = '1' then
-
                 x_cnt <= 0;
                 y_cnt <= 0;
-
             elsif en_25 = '1' then
                 if x_cnt = 799 then
+                    x_cnt <= 0;
 
-                    y_cnt <= 0;
-
-                    if x_cnt = 524 then
-                        x_cnt <= 0;
+                    if y_cnt = 524 then
+                        y_cnt <= 0;
                     else
-                        x_cnt <= x_cnt + 1;
+                        y_cnt <= y_cnt + 1;
                     end if;
-
                 else
                     x_cnt <= x_cnt + 1;
                 end if;
@@ -49,6 +43,10 @@ begin
         end if;
     end process;
 
+
+    x_sync <= '0' when (x_cnt >= 656 and x_cnt <= 751) else '1';
+    y_sync <= '0' when (y_cnt >= 490 and y_cnt <= 491) else '1';
+    video_on <= '1' when (x_cnt < 640 and y_cnt < 480) else '0';
 
     x_pos <= x_cnt when (x_cnt < 640) else 0;
     y_pos <= y_cnt when (y_cnt < 480) else 0;

@@ -4,16 +4,16 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity rect_movement_fsm is
     Port (
-        clk      : in  STD_LOGIC;         
-        reset    : in  STD_LOGIC;          
-        vsync    : in  STD_LOGIC;           
-        btn_up   : in  STD_LOGIC;
-        btn_down : in  STD_LOGIC;
-        btn_left : in  STD_LOGIC;
-        btn_right: in  STD_LOGIC;
-        rect_x   : out INTEGER range 0 to 639;
-        rect_y   : out INTEGER range 0 to 479
-    );
+             clk      : in  STD_LOGIC;         
+             reset    : in  STD_LOGIC;          
+             vsync    : in  STD_LOGIC;           
+             btn_up   : in  STD_LOGIC;
+             btn_down : in  STD_LOGIC;
+             btn_left : in  STD_LOGIC;
+             btn_right: in  STD_LOGIC;
+             rect_x   : out INTEGER range 0 to 639;
+             rect_y   : out INTEGER range 0 to 479
+         );
 end rect_movement_fsm;
 
 architecture Behavioral of rect_movement_fsm is
@@ -22,7 +22,7 @@ architecture Behavioral of rect_movement_fsm is
 
     signal x_reg : integer range 0 to 639 := 100; 
     signal y_reg : integer range 0 to 479 := 100; 
-    
+
     constant RECT_WIDTH  : integer := 50;
     constant RECT_HEIGHT : integer := 50;
     constant SCREEN_W    : integer := 640;
@@ -52,7 +52,7 @@ begin
                     if btn_up = '1' and y_reg > 0 then
                         y_reg <= y_reg - STEP;
                     end if;
-                    
+
                     if btn_down = '1' and (y_reg + RECT_HEIGHT) < SCREEN_H then
                         y_reg <= y_reg + STEP;
                     end if;
