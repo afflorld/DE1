@@ -17,7 +17,7 @@ end image_gen;
 
 architecture Behavioral of image_gen is
 
-    -- Konstanty čtverce a obrazovky
+
     constant SQ_SIZE : integer := 64;
     constant X_MAX   : integer := 640;
     constant SQ_Y    : integer := 208; 
@@ -66,14 +66,14 @@ begin
         checker := bit_x xor bit_y;
 
         if video_on = '0' then
-            rgb <= x"000"; -- POVINNÁ TMA: Blanking interval
+            rgb <= x"000"; 
             
         elsif btn_u = '1' then
             
             if checker = '1' then
-                rgb <= x"FFF"; -- Bílá
+                rgb <= x"FFF"; 
             else
-                rgb <= x"000"; -- Černá
+                rgb <= x"000"; 
             end if;
             
         elsif (x_pos >= sq_x) and (x_pos < sq_x + SQ_SIZE) and 
@@ -83,7 +83,7 @@ begin
             
         else
          
-            rgb <= x"000"; -- Černá
+            rgb <= x"000"; 
         end if;
     end process;
 
