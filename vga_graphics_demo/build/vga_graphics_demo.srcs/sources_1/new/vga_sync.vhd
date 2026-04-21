@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 04/21/2026 10:09:27 PM
+-- Create Date: 04/21/2026 10:18:09 PM
 -- Design Name: 
--- Module Name: image_gen - Behavioral
+-- Module Name: vga_sync - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,11 +31,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity vga_top is
---  Port ( );
-end vga_top;
+entity vga_sync is
+    Port ( );
+end vga_sync;
 
-architecture Behavioral of vga_top is
+architecture Behavioral of vga_sync is
 
 begin
 
