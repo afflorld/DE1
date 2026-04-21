@@ -19,7 +19,7 @@ The system displays a colored square on a black background by default. The behav
 -------
 # Schematic
 ![Schematic](https://github.com/afflorld/DE1/blob/main/img/shcematic_01.png "Schematic")
-
+#Schematic 2.0 
 ![Schematic]((https://github.com/afflorld/DE1/blob/main/schematic%202.0.jpg) "Schematic_2.0")
 -------
 # Autors
