@@ -19,8 +19,7 @@ The system displays a colored square on a black background by default. The behav
 -------
 # Schematic
 ![Schematic](https://github.com/afflorld/DE1/blob/main/img/shcematic_01.png "Schematic")
-# Schematic 2.0 
-[Schematic]((https://github.com/afflorld/DE1/blob/main/schematic%202.0.jpg_ "Schematic_2.0")
+
 -------
 # Autors
 Samuel Adamec<br />
@@ -28,7 +27,7 @@ Lukas Benda<br />
 Lukas Bartecek<br />
 Vladimir Stastny
 
-
+ 
 
 # .xdc idea
 [Constrains](https://github.com/afflorld/DE1/blob/main/vga_graphics_demo/constr/nexys.xdc "Constrain file")
