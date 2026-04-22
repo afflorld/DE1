@@ -2,13 +2,14 @@
 
 VGA Graphics Controller (Nexys A7-50T)
 
-to run this project use tcl console
 ```Zsh
+# to run this project use tcl console
+
 source \your_directory\create_proj.tcl
-```
-or use 
-```Zsh
-make
+
+# or use 
+
+make command
 ```
 
 ## Project Description
@@ -22,6 +23,8 @@ The system displays a colored square on a black background by default. The behav
 * **BTNU (Hold):** Displays a full-screen checkerboard pattern. Used to test VGA synchronization and pixel sharpness.
 * **BTND (Hold):** Animates the square. The square moves along the X-axis and automatically bounces off the screen edges. Releasing the button pauses the animation at the current position.
 * **BTNR (Press):** Resets the square back to its initial center coordinates.
+
+Detailed descriptions of the modules used in the design can be found in the [VGA.md](.dotfiles/VGA.md) file.
 
 -------
 # Schematic
