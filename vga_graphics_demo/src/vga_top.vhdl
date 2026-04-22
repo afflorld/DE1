@@ -145,7 +145,7 @@ begin
                  rect_y    => sig_rect_y
              );
 
-    image_gen_0 : image_gen
+    img_gen_0 : img_gen
     port map (
                  video_on => sig_video_on,
                  x_pos    => sig_x_pos,
