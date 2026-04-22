@@ -1,5 +1,4 @@
 # Modules
-
 Description of each module used in the design.
 
 ## clk_en - Clock Enable module
@@ -20,7 +19,6 @@ Many digital circuits include an enable (clock enable) input. This signal contro
 Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab4-counter
 
 ## debounce - Debounce module
-
 A bouncy button, also known as a switch bounce, refers to the phenomenon where the electrical contacts in a mechanical switch make multiple rapid transitions between open and closed states when pressed or released. These transitions typically occur over a period of 1–25 ms.
 
 As a result, a single press may be interpreted by digital logic as multiple presses, which can cause incorrect behavior in digital circuits. Examples of real push buttons are shown below. (Note that the active level of the buttons in these examples is low, while the buttons on the Nexys A7 board may use a different active level.)
@@ -34,10 +32,16 @@ Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab6-debounce
 ## fsm - Finite State Machine module
 The FSM acts as the "logic brain" of the project, responsible for calculating the rectangle's position and handling user input. To prevent the rectangle from moving at the internal 100 MHz clock speed (which would be too fast to see), the FSM is synchronized with the vsync signal. This ensures the position updates only once per frame, resulting in a smooth 60 Hz movement.
 
+Author: Lukas Benda 
+
 ## img_gen - Image Generation module
 This module is a combinational logic block. It determines the final 12-bit RGB color for every pixel based on the current coordinates provided by the synchronization module.
+
+Author: Vladimir Stastny
 
 ## vga_sync - VGA Synchronization module
 Acts as the timing core of the video controller, ensuring that pixels are sent to the monitor in the correct order and at the precise rate required by the VGA standard. It handles the transition from a 1D stream of pixel data into a 2D 640×480 frame.
 
 The module utilizes a nested counter system to track the "scanning" position. The horizontal counter (x_cnt) counts from 0 up to 799, and the vertical counter (y_cnt) increments every time a full row is completed, counting from 0 up to 524. While the total area is 800×525 pixels, only the first 640×480 region is visible. The remaining "non-visible" areas—known as the front porch, sync pulse, and back porch—are used to reset the monitor's timing.
+
+Author: Samuel Adamec
