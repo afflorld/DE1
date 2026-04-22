@@ -23,33 +23,33 @@ architecture behavioral of vga_top is
     component clk_en is
         generic ( g_max : positive );
         port (
-        clk, rst : in std_logic; 
-        ce : out std_logic
+             clk, rst : in std_logic; 
+             ce : out std_logic
         );
     end component;
 
     component debounce is
         port (
-        clk, rst, btn_in : in std_logic; 
-        btn_state : out std_logic
+             clk, rst, btn_in : in std_logic; 
+             btn_state : out std_logic
         );
     end component;
 
     component vga_sync is
         port (
-        clk, rst, en_25 : in std_logic;
-        x_sync, y_sync, video_on : out std_logic;
-        x_pos : out integer range 0 to 1023;
-        y_pos : out integer range 0 to 511
+             clk, rst, en_25 : in std_logic;
+             x_sync, y_sync, video_on : out std_logic;
+             x_pos : out integer range 0 to 1023;
+             y_pos : out integer range 0 to 511
     );
     end component;
 
     component fsm is
         port (
-        clk, reset, vsync : in std_logic;
-        btn_up, btn_down, btn_left, btn_right : in std_logic;
-        rect_x : out integer range 0 to 639;
-        rect_y : out integer range 0 to 479
+             clk, reset, vsync : in std_logic;
+             btn_up, btn_down, btn_left, btn_right : in std_logic;
+             rect_x : out integer range 0 to 639;
+             rect_y : out integer range 0 to 479
     );
     end component;
 
