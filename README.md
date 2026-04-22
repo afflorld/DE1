@@ -2,6 +2,15 @@
 
 VGA Graphics Controller (Nexys A7-50T)
 
+to run this project use tcl console
+```Zsh
+source \your_directory\create_proj.tcl
+```
+or use 
+```Zsh
+make
+```
+
 ## Project Description
 This VHDL project implements a VGA controller generating a 640x480 @ 60Hz video signal. It demonstrates VGA synchronization, combinational image generation (static shapes, patterns), and sequential logic for object animation with boundary collision detection.
 
@@ -16,11 +25,9 @@ The system displays a colored square on a black background by default. The behav
 
 -------
 # Schematic
-![Schematic](https://github.com/afflorld/DE1/blob/main/img/shcematic_01.png "Schematic")
-
-# Schematic 2.0
-![Schematic](https://github.com/afflorld/DE1/blob/main/img/Schematic2.png "Schematic 2.0")
+![Schematic](https://github.com/afflorld/DE1/blob/main/.dotfiles/schematic.png "Schematic")
 -------
+
 # Autors
 Samuel Adamec<br />
 Lukas Benda<br />
@@ -28,6 +35,3 @@ Lukas Bartecek<br />
 Vladimir Stastny
 
  
-
-# .xdc idea
-[Constrains](https://github.com/afflorld/DE1/blob/main/vga_graphics_demo/constr/nexys.xdc "Constrain file")
