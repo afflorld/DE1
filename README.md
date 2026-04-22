@@ -26,7 +26,8 @@ Detailed descriptions of the modules used in the design can be found in the [VGA
 
 # Schematic
 ![Schematic](https://github.com/afflorld/DE1/blob/main/.dotfiles/schematic.png "Schematic")
--------
+
+# Video
 
 # Autors
 Samuel Adamec<br />
