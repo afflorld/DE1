@@ -22,11 +22,17 @@ architecture behavioral of vga_top is
 
     component clk_en is
         generic ( g_max : positive );
-        port ( clk, rst : in std_logic; ce : out std_logic );
+        port (
+        clk, rst : in std_logic; 
+        ce : out std_logic
+        );
     end component;
 
     component debounce is
-        port ( clk, rst, btn_in : in std_logic; btn_state : out std_logic );
+        port (
+        clk, rst, btn_in : in std_logic; 
+        btn_state : out std_logic
+        );
     end component;
 
     component vga_sync is
@@ -38,7 +44,7 @@ architecture behavioral of vga_top is
     );
     end component;
 
-    component rect_movement_fsm is
+    component fsm is
         port (
         clk, reset, vsync : in std_logic;
         btn_up, btn_down, btn_left, btn_right : in std_logic;
@@ -47,7 +53,7 @@ architecture behavioral of vga_top is
     );
     end component;
 
-    component image_gen is
+    component img_gen is
         port (
                  video_on : in std_logic;
                  x_pos    : in integer range 0 to 1023;
@@ -75,7 +81,7 @@ architecture behavioral of vga_top is
 
 begin
 
-    clk_en_gen : clk_en
+    clk_en_0 : clk_en
     generic map ( g_max => 4 )
     port map (
                  clk => clk,
@@ -112,7 +118,7 @@ begin
                  btn_state => sig_btnr
              );
 
-    vga_timing : vga_sync
+    vga_sync_0 : vga_sync
     port map (
                  clk      => clk,
                  rst      => btnc,
@@ -126,7 +132,7 @@ begin
 
     vga_ysync <= sig_ysync;
 
-    move_logic : fsm
+    fsm_0 : fsm
     port map (
                  clk       => clk,
                  reset     => btnc,
@@ -139,7 +145,7 @@ begin
                  rect_y    => sig_rect_y
              );
 
-    pixel_gen : image_gen
+    image_gen_0 : image_gen
     port map (
                  video_on => sig_video_on,
                  x_pos    => sig_x_pos,
