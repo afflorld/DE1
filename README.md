@@ -4,11 +4,9 @@ VGA Graphics Controller (Nexys A7-50T)
 
 ```Zsh
 # to run this project use tcl console
-
 source \your_directory\create_proj.tcl
 
 # or use 
-
 make command
 ```
 
