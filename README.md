@@ -4,7 +4,7 @@ VGA Graphics Controller (Nexys A7-50T)
 
 ```Zsh
 # to run this project use tcl console
-source \your_directory\create_proj.tcl
+source \your_directory\DE1\vga_graphics_demo\create_proj.tcl
 
 # or use 
 make command
@@ -24,7 +24,6 @@ The system displays a colored square on a black background by default. The behav
 
 Detailed descriptions of the modules used in the design can be found in the [VGA.md](.dotfiles/VGA.md) file.
 
--------
 # Schematic
 ![Schematic](https://github.com/afflorld/DE1/blob/main/.dotfiles/schematic.png "Schematic")
 -------
