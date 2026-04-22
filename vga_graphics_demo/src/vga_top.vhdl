@@ -75,7 +75,7 @@ architecture behavioral of vga_top is
 
 begin
 
-    ce_gen_inst : clk_en
+    clk_en_gen : clk_en
     generic map ( g_max => 4 )
     port map (
                  clk => clk,
@@ -126,7 +126,7 @@ begin
 
     vga_ysync <= sig_ysync;
 
-    move_logic : rect_movement_fsm
+    move_logic : fsm
     port map (
                  clk       => clk,
                  reset     => btnc,

@@ -1,8 +1,6 @@
 # VGA Graphics Demo
--------
-## About
 
-# VGA Graphics Controller (Nexys A7-50T)
+VGA Graphics Controller (Nexys A7-50T)
 
 ## Project Description
 This VHDL project implements a VGA controller generating a 640x480 @ 60Hz video signal. It demonstrates VGA synchronization, combinational image generation (static shapes, patterns), and sequential logic for object animation with boundary collision detection.

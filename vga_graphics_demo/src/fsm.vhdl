@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity rect_movement_fsm is
+entity fsm is
     Port (
              clk      : in  STD_LOGIC;         
              reset    : in  STD_LOGIC;          
@@ -14,9 +14,10 @@ entity rect_movement_fsm is
              rect_x   : out INTEGER range 0 to 639;
              rect_y   : out INTEGER range 0 to 479
          );
-end rect_movement_fsm;
+end fsm;
 
-architecture Behavioral of rect_movement_fsm is
+architecture Behavioral of fsm is
+
     type state_type is (S_IDLE, S_MOVE, S_WAIT);
     signal current_state : state_type := S_IDLE;
 
