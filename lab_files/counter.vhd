@@ -1,22 +1,3 @@
--------------------------------------------------
---! @brief N-bit synchronous up counter with enable
---! @version 1.4
---! @copyright (c) 2019-2026 Tomas Fryza, MIT license
---!
---! This design implements a parameterizable N-bit
---! binary up counter with synchronous, high-active
---! reset and clock enable input. The counter wraps
---! around to zero after reaching its maximum value
---! (2^G_BITS - 1).
---
--- Notes:
--- - Synchronous design (rising edge of clk)
--- - High-active synchronous reset
--- - Enable input controls counting
--- - Modulo 2^N operation (automatic wrap-around)
--- - Integer-based internal counter
--------------------------------------------------
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;  -- Package for data types conversion
