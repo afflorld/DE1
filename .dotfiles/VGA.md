@@ -29,11 +29,15 @@ As a result, a single press may be interpreted by digital logic as multiple pres
 
 ![image](https://github.com/tomas-fryza/vhdl-examples/blob/master/lab6-debounce/images/bouncey6.png)
 
-Source:https://github.com/tomas-fryza/vhdl-examples/tree/master/lab6-debounce
+Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab6-debounce
 
 ## fsm - Finite State Machine module
+The FSM acts as the "logic brain" of the project, responsible for calculating the rectangle's position and handling user input. To prevent the rectangle from moving at the internal 100 MHz clock speed (which would be too fast to see), the FSM is synchronized with the vsync signal. This ensures the position updates only once per frame, resulting in a smooth 60 Hz movement.
 
 ## img_gen - Image Generation module
+This module is a combinational logic block. It determines the final 12-bit RGB color for every pixel based on the current coordinates provided by the synchronization module.
 
 ## vga_sync - VGA Synchronization module
+Acts as the timing core of the video controller, ensuring that pixels are sent to the monitor in the correct order and at the precise rate required by the VGA standard. It handles the transition from a 1D stream of pixel data into a 2D 640×480 frame.
 
+The module utilizes a nested counter system to track the "scanning" position. The horizontal counter (x_cnt) counts from 0 up to 799, and the vertical counter (y_cnt) increments every time a full row is completed, counting from 0 up to 524. While the total area is 800×525 pixels, only the first 640×480 region is visible. The remaining "non-visible" areas—known as the front porch, sync pulse, and back porch—are used to reset the monitor's timing.
