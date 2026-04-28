@@ -137,7 +137,7 @@ begin
                  clk       => clk,
                  reset     => btnc,
                  vsync     => sig_ysync,
-                 btn_up    => '0',
+                 btn_up    => sig_btnu,
                  btn_down  => sig_btnd,
                  btn_left  => sig_btnl,
                  btn_right => sig_btnr,
