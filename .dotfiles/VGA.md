@@ -81,3 +81,16 @@ The module utilizes a nested counter system to track the "scanning" position. Th
 | `x_sync` | Out | `std_logic` | Horizontal sync pulse - HSYNC. Tells the monitor to move the brush to the next line |
 | `y_pos` | Out | `std_logic_vector(8:0)` | The current vertical coordinate of the monitor's brush (0 to 479) |
 | `y_sync` | Out | `std_logic` | Vertical sync pulse - VSYNC. Tells the monitor to start a completely new frame at the top left |
+
+
+## Top module 
+
+| Port Name | Direction | Size/Type | Description |
+| :--- | :--- | :--- | :--- |
+| `clk` | In | `std_logic` | Main system clock for synchronous logic |
+| `btn[c/u/d/l/r]` | In | `std_logic` | The physical push-buttons on the board |
+| `vga_xsync` | Out | `std_logic` | The physical HSYNC pin wired to the VGA port |
+| `vga_ysync` | Out | `std_logic` | The physical VSYNC pin wired to the VGA port |
+| `vga_r`, `vga_g`, `vga_b` | Out | `std_logic_vector(3:0)` | The physical pins sending analog color data to the VGA port. |
+
+
