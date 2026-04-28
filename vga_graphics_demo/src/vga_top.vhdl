@@ -9,6 +9,8 @@ entity vga_top is
              btnd      : in  std_logic;
              btnl      : in  std_logic;
              btnr      : in  std_logic;
+                
+             sw        : in  std_logic_vector(15 downto 0);
 
              vga_xsync : out std_logic;        
              vga_ysync : out std_logic;        
@@ -60,7 +62,8 @@ architecture behavioral of vga_top is
                  y_pos    : in integer range 0 to 511;
                  rect_x   : in integer range 0 to 639;
                  rect_y   : in integer range 0 to 479;
-                 btn_u    : in std_logic;
+                 sw_red   : in std_logic;
+                 sw_chess : in std_logic;
                  rgb      : out std_logic_vector(11 downto 0)
              );
     end component;
@@ -152,7 +155,8 @@ begin
                  y_pos    => sig_y_pos,
                  rect_x   => sig_rect_x,
                  rect_y   => sig_rect_y,
-                 btn_u    => sig_btnu,
+                 sw_red   => sw(0),
+                 sw_chess => sw(15),
                  rgb      => sig_rgb_full
              );
 
