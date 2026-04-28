@@ -8,12 +8,16 @@ Creating additional clock domains may cause timing issues or clock domain crossi
 ![image](https://github.com/tomas-fryza/vhdl-examples/blob/master/lab4-counter/images/waveform_clock-enable.png)
 
 Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab4-counter
+### Ports
 
 | Port Name | Direction | Size/Type | Description |
 | :--- | :--- | :--- | :--- |
 | `clk` | In | `std_logic` | The very fast 100 MHz main system clock from the board |
 | `rst` | In | `std_logic` | Reset signal to restart the internal counter |
 | `ce` | Out | `std_logic` | Clock enable pulse. It ticks exactly at 25 MHz |
+
+### Testbench
+![image](https://github.com/user-attachments/assets/357956c1-63d2-421c-88cd-78ff507f324a)
 
 
 ## counter - Counter module
