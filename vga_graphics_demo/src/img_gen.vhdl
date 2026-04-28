@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity image_gen is
+entity img_gen is
     Port (
         video_on : in  STD_LOGIC;
         x_pos    : in  integer range 0 to 1023; 
@@ -12,9 +12,9 @@ entity image_gen is
         btn_u    : in  STD_LOGIC;               
         rgb      : out STD_LOGIC_VECTOR(11 downto 0)
     );
-end image_gen;
+end img_gen;
 
-architecture Behavioral of image_gen is
+architecture Behavioral of img_gen is
     constant SQ_SIZE : integer := 50;
 begin
 
