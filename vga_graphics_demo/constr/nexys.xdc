@@ -20,8 +20,8 @@ set_property -dict { PACKAGE_PIN P18   IOSTANDARD LVCMOS33 } [get_ports { btnd }
 # -----------------------------------------------
 # Switche
 # -----------------------------------------------
-set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { sw_0 }];  # SW0 (zcela vpravo)
-set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { sw_15 }]; # SW15 (zcela vlevo)
+set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { sw_0 }];  
+set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { sw_15 }];
 
 # -----------------------------------------------
 # VGA Connector
