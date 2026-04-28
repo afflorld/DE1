@@ -25,7 +25,7 @@ The system displays a colored square on a black background by default. The behav
 Detailed descriptions of the modules used in the design can be found in the [VGA.md](.dotfiles/VGA.md) file.
 
 # Schematic
-![Schematic](<img width="823" height="505" alt="Schema" src="https://github.com/user-attachments/assets/1cf6455c-93e9-4ee0-a20f-99b586e56323" />)
+![Schematic](.dotfiles/Schema.png)
 
 # Video
 
