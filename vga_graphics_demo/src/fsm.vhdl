@@ -21,8 +21,8 @@ architecture Behavioral of fsm is
     type state_type is (S_IDLE, S_MOVE, S_WAIT);
     signal current_state : state_type := S_IDLE;
 
-    signal x_reg : integer range 0 to 639 := 100; 
-    signal y_reg : integer range 0 to 479 := 100; 
+    signal x_reg : integer range 0 to 639 := 295; 
+    signal y_reg : integer range 0 to 479 := 215; 
 
     constant RECT_WIDTH  : integer := 50;
     constant RECT_HEIGHT : integer := 50;
@@ -39,8 +39,8 @@ begin
     begin
         if reset = '1' then
             current_state <= S_IDLE;
-            x_reg <= 100;
-            y_reg <= 100;
+            x_reg <= 295;
+            y_reg <= 215;
         elsif rising_edge(clk) then
             case current_state is
 
