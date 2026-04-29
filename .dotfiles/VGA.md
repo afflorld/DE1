@@ -8,6 +8,7 @@ Creating additional clock domains may cause timing issues or clock domain crossi
 ![image](https://github.com/tomas-fryza/vhdl-examples/blob/master/lab4-counter/images/waveform_clock-enable.png)
 
 Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab4-counter
+
 ### Ports
 
 | Port Name | Direction | Size/Type | Description |
@@ -16,8 +17,8 @@ Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab4-counter
 | `rst` | In | `std_logic` | Reset signal to restart the internal counter |
 | `ce` | Out | `std_logic` | Clock enable pulse. It ticks exactly at 25 MHz |
 
-### Testbench
-![image](https://github.com/user-attachments/assets/357956c1-63d2-421c-88cd-78ff507f324a)
+### Simulation
+![image](./clk_en.png)
 
 
 ## counter - Counter module
@@ -28,6 +29,10 @@ Many digital circuits include an enable (clock enable) input. This signal contro
 ![image](https://github.com/tomas-fryza/vhdl-examples/blob/master/lab4-counter/images/waveform_counter.png)
 
 Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab4-counter
+
+### Simulation
+
+![image](./counter.png)
 
 ## debounce - Debounce module
 A bouncy button, also known as a switch bounce, refers to the phenomenon where the electrical contacts in a mechanical switch make multiple rapid transitions between open and closed states when pressed or released. These transitions typically occur over a period of 1–25 ms.
@@ -40,6 +45,8 @@ As a result, a single press may be interpreted by digital logic as multiple pres
 
 Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab6-debounce
 
+### Ports
+
 | Port Name | Direction | Size/Type | Description |
 | :--- | :--- | :--- | :--- |
 | `btn_in` | In | `std_logic` | The raw electrical signal coming directly from the physical push button |
@@ -47,8 +54,14 @@ Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab6-debounce
 | `rst` | In | `std_logic` | Asynchronous reset to clear the internal state of the filter |
 | `btn_state` | Out | `std_logic` | The stable signal representing a true button press. Safe to use without registering fake multiple clicks |
 
+### Simulation
+
+![image](./debounce.png)
+
 ## fsm - Finite State Machine module
 The FSM acts as the "logic brain" of the project, responsible for calculating the rectangle's position and handling user input. To prevent the rectangle from moving at the internal 100 MHz clock speed (which would be too fast to see), the FSM is synchronized with the vsync signal. This ensures the position updates only once per frame, resulting in a smooth 60 Hz movement.
+
+### Ports
 
 | Port Name | Direction | Size/Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -59,8 +72,14 @@ The FSM acts as the "logic brain" of the project, responsible for calculating th
 | `rect_x` | Out | `std_logic_vector(9:0)` | The calculated X-coordinate where the object should be right now |
 | `rect_y` | Out | `std_logic_vector(8:0)` | The calculated Y-coordinate where the object should be right now |
 
+### Simulation
+
+![image](./fsm.png)
+
 ## img_gen - Image Generation module
 This module is a combinational logic block. It determines the final 12-bit RGB color for every pixel based on the current coordinates provided by the synchronization module.
+
+### Ports
 
 | Port Name | Direction | Size/Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -70,10 +89,16 @@ This module is a combinational logic block. It determines the final 12-bit RGB c
 | `x_pos`, `y_pos` | In | `std_logic_vector` | The exact pixel the monitor is asking us to color at the moment |
 | `rgb` | Out | `std_logic_vector(11:0)` | The final 12-bit color code - 4 bits Red, 4 bits Green, 4 bits Blue that are sent to the screen |
 
+### Simulation
+
+![image](./img_gen.png)
+
 ## vga_sync - VGA Synchronization module
 Acts as the timing core of the video controller, ensuring that pixels are sent to the monitor in the correct order and at the precise rate required by the VGA standard. It handles the transition from a 1D stream of pixel data into a 2D 640×480 frame.
 
 The module utilizes a nested counter system to track the "scanning" position. The horizontal counter (x_cnt) counts from 0 up to 799, and the vertical counter (y_cnt) increments every time a full row is completed, counting from 0 up to 524. While the total area is 800×525 pixels, only the first 640×480 region is visible. The remaining "non-visible" areas—known as the front porch, sync pulse, and back porch—are used to reset the monitor's timing.
+
+### Ports
 
 | Port Name | Direction | Size/Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -86,8 +111,15 @@ The module utilizes a nested counter system to track the "scanning" position. Th
 | `y_pos` | Out | `std_logic_vector(8:0)` | The current vertical coordinate of the monitor's brush (0 to 479) |
 | `y_sync` | Out | `std_logic` | Vertical sync pulse - VSYNC. Tells the monitor to start a completely new frame at the top left |
 
+### Simulation
+
+![image](./vga_sync.png)
 
 ## Top module 
+
+This module connects all the previous modules together and maps the internal signals to the physical pins on the FPGA board. It serves as the final integration point where all components work together to produce the VGA output.
+
+### Ports
 
 | Port Name | Direction | Size/Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -97,4 +129,6 @@ The module utilizes a nested counter system to track the "scanning" position. Th
 | `vga_ysync` | Out | `std_logic` | The physical VSYNC pin wired to the VGA port |
 | `vga_r`, `vga_g`, `vga_b` | Out | `std_logic_vector(3:0)` | The physical pins sending analog color data to the VGA port. |
 
+### Simulation
 
+![image](./vga_top.png)

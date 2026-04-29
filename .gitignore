@@ -42,3 +42,25 @@ target
 # Logs
 *.jou
 *.log
+
+
+# Vivado temporary and log files
+*.log
+*.jou
+*.str
+*.os
+.Xil/
+vivado*.zip
+
+# Local user and machine-specific settings
+*.cache/
+*.hw/
+*.ip_user_files/
+
+# Compilation results (Synthesis/Implementation)
+*.runs/
+*.sim/
+
+# Ensure core project files are NOT ignored
+!*.xpr
+!*.srcs/
