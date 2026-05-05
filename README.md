@@ -11,9 +11,12 @@ The system displays a colored square on a black background by default. The behav
 **INPUT** 
 
 * **Default State:** A static square is displayed in the exact center of the monitor.
-* **BTNU (Hold):** Displays a full-screen checkerboard pattern. Used to test VGA synchronization and pixel sharpness.
-* **BTND (Hold):** Animates the square. The square moves along the X-axis and automatically bounces off the screen edges. Releasing the button pauses the animation at the current position.
-* **BTNR (Press):** Resets the square back to its initial center coordinates.
+* **BTNU (Press/Hold):** Displays a full-screen checkerboard pattern. Used to test VGA synchronization and pixel sharpness.
+* **BTND (Press/Hold):** Animates the square. The square moves along the X-axis and automatically bounces off the screen edges. Releasing the button pauses the animation at the current position.
+* **BTNR (Press/Hold):** Resets the square back to its initial center coordinates.
+* **BTNL (Press/Hold):** Moves the square to the left along the X-axis. Movement stops when the button is released or the screen edge is reached.
+* **BTNC (Press):** Instantly resets the square's position to the center of the screen. 
+
 
 
 **OUTPUT** 
