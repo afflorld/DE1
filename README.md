@@ -8,11 +8,20 @@ This VHDL project implements a VGA controller generating a 640x480 @ 60Hz video 
 
 The system displays a colored square on a black background by default. The behavior can be controlled using the onboard push buttons:
 
+**INPUT** 
+
 * **Default State:** A static square is displayed in the exact center of the monitor.
 * **BTNU (Hold):** Displays a full-screen checkerboard pattern. Used to test VGA synchronization and pixel sharpness.
 * **BTND (Hold):** Animates the square. The square moves along the X-axis and automatically bounces off the screen edges. Releasing the button pauses the animation at the current position.
 * **BTNR (Press):** Resets the square back to its initial center coordinates.
 
+
+**OUTPUT** 
+
+* **vga_xsync:**It tells the monitor to go back to the left edge of the screen. It is also used to move to the next row of pixels once per line.
+* **vga_ysync:**It tells the monitor to go back to the top of the screen. It is also used to update the animation once per frame.
+* **vga_r, vga_g, vga_g:** The physical pins sending analog color data to the VGA port.
+* 
 Detailed descriptions of the modules used in the design can be found in the [VGA.md](.dotfiles/VGA.md) file.
 
 # Schematic
