@@ -16,7 +16,8 @@ The system displays a colored square on a black background by default. The behav
 * **BTNR (Press/Hold):** Resets the square back to its initial center coordinates.
 * **BTNL (Press/Hold):** Moves the square to the left along the X-axis. Movement stops when the button is released or the screen edge is reached.
 * **BTNC (Press):** Instantly resets the square's position to the center of the screen. 
-* **SW[15:0]: (Switch)** It provides user input from the physical switches on the board. The left switche are used to change the drawing pattern. The right switche are used to change the color.
+* **SW[15:0]: (Switch)** It provides user input from the physical switches on the board. The left switches are used to change
+the background pattern. The right switches are used to change the color of the square.
 
 
 
