@@ -21,6 +21,7 @@ The system displays a colored square on a black background by default. The behav
 * **vga_xsync:** It tells the monitor to go back to the left edge of the screen. It is also used to move to the next row of pixels once per line.
 * **vga_ysync:** It tells the monitor to go back to the top of the screen. It is also used to update the animation once per frame.
 * **vga_r, vga_g, vga_g:** The physical pins sending analog color data to the VGA port.
+
 Detailed descriptions of the modules used in the design can be found in the [VGA.md](.dotfiles/VGA.md) file.
 
 # Schematic
