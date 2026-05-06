@@ -33,7 +33,8 @@ The inputs and outputs of the design are as follows:
 * **BTNR:** Moves the square to the right along the X-axis. Movement stops when the button is released or the screen edge is reached.
 * **BTNL:** Moves the square to the left along the X-axis. Movement stops when the button is released or the screen edge is reached.
 * **BTNC:** Instantly resets the square's position to the center of the screen. 
-* **SW[15:0]:** It provides user input from the physical switches on the board. The left switches are used to change the background pattern. The right switches are used to change the color of the square.
+* **SW[0]:** Toggles the background pattern between solid black and a checkerboard pattern.
+* **SW[15]:** Toggles the color of the square between red and white.
 * **clk:** The main system clock that drives all synchronous logic in the design.
 * **vga_xsync:** It tells the monitor to go back to the left edge of the screen. It is also used to move to the next row of pixels once per line.
 * **vga_ysync:** It tells the monitor to go back to the top of the screen. It is also used to update the animation once per frame.
@@ -52,7 +53,7 @@ This module connects all the previous modules together and maps the internal sig
 | :--- | :--- | :--- | :--- |
 | `clk` | In | `std_logic` | Main system clock for synchronous logic |
 | `btn[c/u/d/l/r]` | In | `std_logic` | The physical push-buttons on the board |
-| `sw` | In | `std_logic_vector(15:0)` | The physical switches on the board |
+| `sw_red`, `sw_chess` | In | `std_logic` | The physical switches on the board |
 | `vga_xsync` | Out | `std_logic` | The physical HSYNC pin wired to the VGA port |
 | `vga_ysync` | Out | `std_logic` | The physical VSYNC pin wired to the VGA port |
 | `vga_r`, `vga_g`, `vga_b` | Out | `std_logic_vector(3:0)` | The physical pins sending analog color data to the VGA port. |
