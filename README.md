@@ -4,7 +4,7 @@ VGA Graphics Controller (Nexys A7-50T)
 
 This VHDL project implements a VGA controller generating a 640x480 @ 60Hz video signal. It demonstrates VGA synchronization, combinational image generation (static shapes, patterns), and sequential logic for object animation with boundary collision detection.
 
-## Controls
+# Controls
 
 The system displays a colored square on a black background by default. The behavior can be controlled using the onboard push buttons:
 
@@ -15,10 +15,15 @@ The system displays a colored square on a black background by default. The behav
 * **Button center (Press):**
 * **Switches (Turn on/off):**
 
-## [Schematic](.dotfiles/diagram.png)
-![schematic](.dotfiles/diagram.png)
+# [Schematic](.dotfiles/diagram.png)
+
+![schematic](.dotfiles/diagram_02.png)
 ---
-![Schematic](.dotfiles/schematic2.0.png)
+![Schematic](.dotfiles/schematic_03.png)
+
+# Utilization
+
+![Utilization](.dotfiles/utilization.png)
 
 # Inputs and Outputs
 
@@ -137,6 +142,8 @@ The module utilizes a nested counter system to track the "scanning" position. Th
 ## [img_gen](vga_graphics_demo/vga_graphics_demo.srcs/sources_1/new/img_gen.vhd) - Image Generation module
 This module is a combinational logic block. It determines the final 12-bit RGB color for every pixel based on the current coordinates provided by the synchronization module.
 
+Our output is not synchronized with the clock, flickering may occur if the logic is too complex.
+
 ### Ports
 
 | Port Name | Direction | Size/Type | Description |
@@ -220,6 +227,17 @@ Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab6-debounce
 Pdf version of the poster: [poster.pdf](./.dotfiles/poster.pdf)
 
 # Video
+
+Link to the video demonstration of the project: [VGA Graphics Demo](https://www.youtube.com/watch?v=VIqJzrhe5ss)
+
+Link to see color changing live [Color Switch](https://www.youtube.com/watch?v=0jc9lVAcZNI)
+
+Link to see video demonstration up close [VGA Graphics Demo Close-up](https://www.youtube.com/watch?v=4cAkm9lG9N0)
+
+# Photos
+
+VGA sync pulses for horizontal and vertical synchronization captured on an oscilloscope:
+![image](./.dotfiles/vga_sync.jpg)
 
 # Authors
 Samuel Adamec<br />
