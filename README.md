@@ -37,7 +37,7 @@ The inputs and outputs of the design are as follows:
 # Modules
 Description of each module used in the design.
 
-## Top module 
+## [Top module](vga_graphics_demo/vga_graphics_demo.srcs/sources_1/new/vga_top.vhd)
 
 This module connects all the previous modules together and maps the internal signals to the physical pins on the FPGA board. It serves as the final integration point where all components work together to produce the VGA output.
 
