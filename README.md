@@ -175,7 +175,7 @@ Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab4-counter
 | `sig_cnt` | `std_logic_vector(1:0)` | A 2-bit counter that increments with each clock cycle. It resets to zero when it reaches 3, creating a pulse every 4 cycles (100 MHz / 4 = 25 MHz). |
 
 ### Simulation
-![image](./clk_en.png)
+![image](./.dotfiles/clk_en.png)
 
 ## debounce - Debounce module
 A bouncy button, also known as a switch bounce, refers to the phenomenon where the electrical contacts in a mechanical switch make multiple rapid transitions between open and closed states when pressed or released. These transitions typically occur over a period of 1–25 ms.
@@ -211,7 +211,7 @@ Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab6-debounce
 
 ### Simulation
 
-![image](./debounce.png)
+![image](./.dotfiles/debounce.png)
 
 # Poster
 
