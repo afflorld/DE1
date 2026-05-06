@@ -103,7 +103,7 @@ The FSM acts as the "logic brain" of the project, responsible for calculating th
 
 ![image](./.dotfiles/fsm.png)
 
-## vga_sync - VGA Synchronization module
+## [vga_sync](vga_graphics_demo/vga_graphics_demo.srcs/sources_1/new/vga_sync.vhd) - VGA Synchronization module
 Acts as the timing core of the video controller, ensuring that pixels are sent to the monitor in the correct order and at the precise rate required by the VGA standard. It handles the transition from a 1D stream of pixel data into a 2D 640×480 frame.
 
 The module utilizes a nested counter system to track the "scanning" position. The horizontal counter (x_cnt) counts from 0 up to 799, and the vertical counter (y_cnt) increments every time a full row is completed, counting from 0 up to 524. While the total area is 800×525 pixels, only the first 640×480 region is visible. The remaining "non-visible" areas—known as the front porch, sync pulse, and back porch—are used to reset the monitor's timing.
