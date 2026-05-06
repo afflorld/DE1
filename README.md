@@ -177,7 +177,7 @@ Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab4-counter
 ### Simulation
 ![image](./.dotfiles/clk_en.png)
 
-## debounce - Debounce module
+## [debounce](vga_graphics_demo/vga_graphics_demo.srcs/sources_1/new/debounce.vhd) - Debounce module 
 A bouncy button, also known as a switch bounce, refers to the phenomenon where the electrical contacts in a mechanical switch make multiple rapid transitions between open and closed states when pressed or released. These transitions typically occur over a period of 1–25 ms.
 
 As a result, a single press may be interpreted by digital logic as multiple presses, which can cause incorrect behavior in digital circuits. Examples of real push buttons are shown below. (Note that the active level of the buttons in these examples is low, while the buttons on the Nexys A7 board may use a different active level.)
