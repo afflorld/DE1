@@ -221,11 +221,11 @@ Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab6-debounce
 
 ![image](./.dotfiles/debounce.png)
 
-# [Poster](./.dotfiles/poster.png)
+# Poster
 
-![image](./.dotfiles/poster.png)
+![image](./.dotfiles/poster_2.png)
 
-Pdf version of the poster: [poster.pdf](./.dotfiles/poster.pdf)
+Pdf version of the poster: [poster.pdf](./.dotfiles/poster_2.pdf)
 
 # Video
 
