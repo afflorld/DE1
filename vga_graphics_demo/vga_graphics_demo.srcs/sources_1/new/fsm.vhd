@@ -55,12 +55,12 @@ begin
                         y_reg <= y_reg - STEP;
                     end if;
 
-                    if btn_down = '1' and (y_reg + RECT_HEIGHT) < SCREEN_H then  -- Gemini added check to prevent moving out of bounds
+                    if btn_down = '1' and (y_reg + RECT_HEIGHT) < SCREEN_H then  
                         y_reg <= y_reg + STEP;
                     end if;
 
                     -- Update X position with bounds checks
-                    if btn_right = '1' and (x_reg + RECT_WIDTH) < SCREEN_W then -- Gemini added check to prevent moving out of bounds
+                    if btn_right = '1' and (x_reg + RECT_WIDTH) < SCREEN_W then 
                         x_reg <= x_reg + STEP;
                     end if;
 
