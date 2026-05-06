@@ -9,8 +9,9 @@ entity vga_top is
              btnd      : in  std_logic;
              btnl      : in  std_logic;
              btnr      : in  std_logic;
-                
-             sw        : in  std_logic_vector(15 downto 0);
+
+             sw_red    : in  std_logic;
+             sw_chess  : in  std_logic;
 
              vga_xsync : out std_logic;        
              vga_ysync : out std_logic;        
@@ -155,8 +156,8 @@ begin
                  y_pos    => sig_y_pos,
                  rect_x   => sig_rect_x,
                  rect_y   => sig_rect_y,
-                 sw_red   => sw(0),
-                 sw_chess => sw(15),
+                 sw_red   => sw_red,
+                 sw_chess => sw_chess,
                  rgb      => sig_rgb_full
              );
 

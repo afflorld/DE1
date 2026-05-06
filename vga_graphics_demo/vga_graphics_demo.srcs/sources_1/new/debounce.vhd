@@ -5,9 +5,7 @@ entity debounce is
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
            btn_in : in STD_LOGIC;
-           btn_state : out STD_LOGIC;
-           btn_press : out STD_LOGIC;
-           btn_release : out std_logic);
+           btn_state : out STD_LOGIC);
 end debounce;
 
 architecture Behavioral of debounce is
@@ -15,7 +13,7 @@ architecture Behavioral of debounce is
     -- Constants
     ----------------------------------------------------------------
     constant C_SHIFT_LEN : positive := 5;  -- Debounce history
-    constant C_MAX       : positive := 2;  -- Sampling period
+    constant C_MAX       : positive := 200_000;  -- Sampling period
                                            -- 2 for simulation
                                            -- 200_000 (2 ms) for implementation !!!
 
@@ -27,7 +25,6 @@ architecture Behavioral of debounce is
     signal sync1     : std_logic;
     signal shift_reg : std_logic_vector(C_SHIFT_LEN-1 downto 0);
     signal debounced : std_logic;
-    signal delayed   : std_logic;
 
     ----------------------------------------------------------------
     -- Component declaration for clock enable
@@ -64,7 +61,6 @@ begin
                 sync1     <= '0';
                 shift_reg <= (others => '0');
                 debounced <= '0';
-                delayed   <= '0';
 
             else
                 -- Input synchronizer
@@ -86,9 +82,6 @@ begin
                     end if;
 
                 end if;
-
-                -- One clock delayed output for edge detector
-                delayed <= debounced;
             end if;
         end if;
     end process;
@@ -97,8 +90,4 @@ begin
     -- Outputs
     ----------------------------------------------------------------
     btn_state <= debounced;
-
-    -- One-clock pulse when button pressed
-    btn_press <= debounced and not(delayed);
-    btn_release <= not(debounced) and delayed;
 end Behavioral;
