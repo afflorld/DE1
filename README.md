@@ -215,6 +215,10 @@ Source: https://github.com/tomas-fryza/vhdl-examples/tree/master/lab6-debounce
 
 # Poster
 
+![image](./.dotfiles/poster.png)
+
+Pdf version of the poster: [poster.pdf](./.dotfiles/poster.pdf)
+
 # Video
 
 # Authors
