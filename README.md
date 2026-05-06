@@ -134,7 +134,7 @@ The module utilizes a nested counter system to track the "scanning" position. Th
 ---
 ![image](./.dotfiles/vga_sync_1.png)
 
-## img_gen - Image Generation module
+## [img_gen](vga_graphics_demo/vga_graphics_demo.srcs/sources_1/new/img_gen.vhd) - Image Generation module
 This module is a combinational logic block. It determines the final 12-bit RGB color for every pixel based on the current coordinates provided by the synchronization module.
 
 ### Ports
