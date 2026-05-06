@@ -99,7 +99,7 @@ The FSM acts as the "logic brain" of the project, responsible for calculating th
 | :--- | :--- |
 | `state_type` | An enumerated type defining the possible states of the FSM, such as `IDLE`, `MOVE_RIGHT`, `MOVE_DOWN`, `MOVE_LEFT`, and `MOVE_UP`. Each state corresponds to a specific movement direction or behavior of the rectangle. |
 
-### Simulation
+### [Simulation](vga_graphics_demo/vga_graphics_demo.srcs/sim_1/new/fsm_tb.vhd)
 
 ![image](./.dotfiles/fsm.png)
 
