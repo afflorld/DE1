@@ -70,7 +70,7 @@ This module connects all the previous modules together and maps the internal sig
 
 ![image](./.dotfiles/vga_top.png)
 
-## fsm - Finite State Machine module
+## [fsm](vga_graphics_demo/vga_graphics_demo.srcs/sources_1/new/fsm.vhd) - Finite State Machine module
 
 The FSM acts as the "logic brain" of the project, responsible for calculating the rectangle's position and handling user input. To prevent the rectangle from moving at the internal 100 MHz clock speed (which would be too fast to see), the FSM is synchronized with the vsync signal. This ensures the position updates only once per frame, resulting in a smooth 60 Hz movement.
 
