@@ -153,7 +153,7 @@ This module is a combinational logic block. It determines the final 12-bit RGB c
 ---
 ![image](./.dotfiles/img_gen_1.png)
 
-## clk_en - Clock Enable module
+## [clk_en](vga_graphics_demo/vga_graphics_demo.srcs/sources_1/new/clk_en.vhd) - Clock Enable module
 To drive other logic in the design that requires a slower operation, it is better to generate a clock enable signal (see figure bellow) instead of creating a new clock domain using clock dividers. 
 Creating additional clock domains may cause timing issues or clock domain crossing (CDC) problems such as metastability, data loss, and data incoherency.
 
